@@ -1,0 +1,102 @@
+Cities to add to JSON file 
+(From wikipedia page on most visited cities in the world - https://en.wikipedia.org/wiki/List_of_cities_by_international_visitors)
+
+Added
+----------
+- Macau **
+- Shenzhen **
+- Lilongwe **
+
+
+To Add
+----------
+
+- Phuket
+- Guangzhou
+- Mecca
+- Pattaya
+- Cancun
+- Agra
+- Antalya
+- Denpasar
+- Osaka
+- Johor Bahru
+- Venice
+- Orlando
+- Chennai
+- Jaipur
+- Florence
+- Ha Long
+- Punta Cana
+- San Francisco
+- Dammam
+- Munich
+- Zhuhai
+- Heraklion
+- Penang Island
+- Kyoto
+- Doha
+- Edirne
+- Jerusalem
+- St Petersburg
+- Artvin
+- Krakow
+- Guilin
+- Jeju
+- Siem Reap
+- Rhodes
+- Abu Dhabi
+- Tiachung 
+- Chiba
+- Nice
+- Sao Paulo
+- Zurich
+- Dusseldorf
+- Chengdu
+- San Jose
+- Hamburg
+- Xi'an
+- Xiamen
+- Casablanca
+- Dalian
+- Amman
+- Hangzhou
+- Pune
+- Tianjin
+- Bangalore
+- Quingdao
+- Bali
+- Crete
+- Hoi An
+- Roatan
+- St. Martin
+- Grand Cayman
+- Bora Bora
+- Berat
+- Butrint
+- Udaipur
+
+
+** Ski locations
+
+- Whistler Blackcomb
+- Courchevel
+- Zermatt
+- Vail Mountain Resort
+- Aspen Snowmass
+- Val d'Isere
+- Cortina D'Ampezzo
+- Telluride
+- Niseko
+- Chamonix
+- St. Anton
+- Kitzbuhel
+- St Moritz
+- Park City Mountain/Canyons
+- Cerro Catedral
+- Deer Valley
+
+** Scuba locations
+** Camping / hiking
+
+

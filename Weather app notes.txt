@@ -1,0 +1,77 @@
+Weather app
+
+- deliver different pictures based on wetaher preference
+- deliver day or night image based on time of day
+- intro and disclaimer write up
+- error message when no results
+- highlight celsius or fahren when selected
+- add adsense
+- optimize images for mobile
+- remove comments & clean code
+- free API available for added functionality
+- bookmark reminder
+- remove original about message and replace with new search message on 'New SEarch'
+- audio click to temp toggle
+- satisfying button to press (maybe round)
+- style drop down menus
+- background fade on menu drop down
+- make table 3 column at smaller screen size
+- plane icon
+- Dev tools audit
+- hide JSON
+- donate process and writeup
+- contrast ratio function
+- PWA compatibility
+- phone testing
+- SEO research for domain and write up
+- social share icons
+- meta description
+
+------------------------------------
+Domain ideas
+
+- travel2next.io ($80 per year)
+
+-------------------------------------
+Future updates
+
+- search by region
+- what to pack
+- what to do 
+- generate Google search from Cites and countries list
+- make download of list an option?
+
+-------------------------------------
+
+Weather descriptions
+
+-10 - -6 (Very cold) - rgb(20, 110, 255)
+-5 - -1 (very cold) - rgb(20, 110, 255)
+0 - 4 (cold)  - rgb(96, 194, 255)
+5 - 9 (cold) - rgb(96, 194, 255)
+10 - 14 (cool) - rgba(173, 236, 252, 0.8)
+15 - 19 (warm) - rgb(244, 255, 45)
+20 - 24 (very warm) - rgb(255, 212, 0)
+25 - 29 (hot) - rgb(255, 171, 15)
+30 - 34 (very hot) - rgb(255, 150, 45)
+
+------------------------------------
+
+Tabbed content or different search sections
+
+- displays current local weather if geolocation active (else {display: done;})
+- wetaher forecat for specific location
+- check specific location by month to return temperature averages
+- possibly include weather warnings (eg. monsoons etc.)
+- return countries by tempertaure range and date
+
+Completed
+--------
+
+- hide menus when table shown replace with reset button **
+- keep temp selection on reload **
+- Header & footer **
+- add color coded themes for each description ie. warm, cool etc (function to change style) **
+- H1 title (Weather planner etc.) **
+- fade images out **
+- consider ad placement **

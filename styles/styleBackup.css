@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    /* background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143)); */
+    background: url('../images/concrete-wall-optimized.png');
+    background-color: grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+  }
+  
+  .location {
+    height: 20vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .temp {
+    /* height: 30vh; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .degree-section {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .degree-section span {
+    margin: 10px;
+    font-size: 30px;
+  }
+  
+  .degree-section h2 {
+    font-size: 40px;
+  }
+  
+  .average-temp {
+    margin-top: 40px;
+  }
+  
+  /* Temp toggle switch */
+  
+  /* The switch - the box around the slider */
+  
+  .tempToggle {
+    width: 100%;
+    background-color: rgb(34, 34, 34);
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-bottom: 20px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked+.slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .radio-options {
+    padding-top: 15px;
+    height: 50px;
+  }
+  
+  /* temp menus & buttons displayed initally onload*/
+  
+  #avgCelsiusTemp_menu {
+    display: initial;
+  }
+  
+  #avgFahrenTemp_menu,
+  #highFahrenTemp_menu,
+  #lowFahrenTemp_menu,
+  #highCelsiusTemp_menu,
+  #lowCelsiusTemp_menu {
+    display: none;
+  }
+  
+  table caption {
+    padding: 20px;
+    color: black;
+  }
+  
+  .effects_container {
+    box-shadow: 2px 3px 10px black;
+  }
+  
+  #t01,
+  #t02,
+  #t03 {
+    /* margin-top: 40px;
+      margin-bottom: 40px;
+      width: 90%;
+      background-color: #f1f1c1;
+      color: black; */
+    margin-bottom: 40px;
+    width: 90vw;
+    display: none;
+    padding: 5px 10px;
+    background: rgb(30, 30, 30);
+    border-radius: 5px;
+    /* text-transform: uppercase; */
+    color: white;
+    /* box-shadow: inset 2px 0px 4px rgba(0, 0, 0, 0.9), inset -2px 0px 4px rgba(0, 0, 0, 0.9); */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.7); */
+    /* -webkit-box-shadow:
+      inset 0 -1px 0 rgba(50, 50, 50, 0.7),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.7),
+      inset 2px 0px 4px rgba(0, 0, 0, 0.9),
+      inset -2px 0px 4px rgba(0, 0, 0, 0.9),
+      0 1px 0px rgba(255, 255, 255, 0.2); */
+    border-collapse: separate;
+    border-spacing: 7px;
+    box-shadow: 1px 3px 5px black;
+    border: 2px solid white;
+    padding-bottom: 10px;
+  }
+  
+  tr {
+    /* background: rgb(48, 48, 48); */
+    /* border-top: 1px solid rgba(0, 0, 0, 0.15);  */
+    /* border-radius: 5px; */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.08); */
+    height: 0px;
+    position: relative;
+    width: 110%;
+    left: -9px;
+    top: 38px;
+    content: " ";
+    /* display: inline-flexbox; */
+    /* box-shadow:
+      inset 0 -1px 0 rgba(50, 50, 50, 0.7),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.7),
+      inset 2px 0px 4px rgba(0, 0, 0, 0.9),
+      inset -2px 0px 4px rgba(0, 0, 0, 0.9),
+      -2px 2px 1px rgba(255, 255, 255, 0.1); */
+    line-height: 32px;
+  }
+  
+  td {
+    font-size: 17px;
+    /* background-color: white;
+    color: black; */
+    /* background: rgb(30, 30, 30); */
+    /* background: -webkit-gradient(linear, center top, center bottom, 
+    color-stop(0.0, rgba(0,0,0, 1)), 
+    color-stop(0.05, rgba(30,30,30, 1)),  
+    color-stop(1.0, rgba(50, 50, 60, 1))); */
+    box-shadow:
+      inset 0 -1px 0 rgba(50, 50, 50, 0.7),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.7),
+      inset 2px 0px 4px rgba(0, 0, 0, 0.9),
+      inset -2px 0px 4px rgba(0, 0, 0, 0.9),
+      -2px 2px 1px rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding-left: 7px;
+  }
+  
+  /* #t01 td:after,
+  #t02 td:after,
+  #t03 td:after {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);  */
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.08); */
+  /* height: 0px;
+    position: relative;
+    width: 110%;
+    left: -9px;
+    top: 38px;
+    content: " ";
+    display: inline-table;
+    box-shadow:
+      inset 0 -1px 0 rgba(50, 50, 50, 0.7),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.7),
+      inset 2px 0px 4px rgba(0, 0, 0, 0.9),
+      inset -2px 0px 4px rgba(0, 0, 0, 0.9),
+      -2px 2px 1px rgba(255, 255, 255, 0.1); */
+  /* background: -webkit-gradient(linear, center top, center bottom, 
+    color-stop(0.0, rgba(0,0,0, 1)), 
+    color-stop(0.05, rgba(30,30,30, 1)),  
+    color-stop(1.0, rgba(50, 50, 60, 1))); */
+  /* } */
+  
+  /* #t01 tr:nth-child(even),
+  #t02 tr:nth-child(even),
+  #t03 tr:nth-child(even) {
+      background-color: #eee;
+    }
+  
+  #t01 tr:nth-child(odd),
+  #t02 tr:nth-child(odd),
+  #t03 tr:nth-child(odd) {
+      background-color: #fff;
+    } */
+  
+  #t01 th,
+  #t02 th,
+  #t03 th {
+    text-align: left;
+    text-transform: uppercase;
+    padding-left: 7px;
+    /* color: white;
+    background-color: black; */
+  }

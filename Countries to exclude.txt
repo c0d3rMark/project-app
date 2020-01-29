@@ -1,0 +1,12 @@
+Countries at war (exclude from weather app)
+
+- Afghanistan
+- Iraq
+- Syria
+- Ukraine
+- Yemen
+- Congo
+- Mexico
+- Central African Republic
+- South Sudan
+- Venezuela

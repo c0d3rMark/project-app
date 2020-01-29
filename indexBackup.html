@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Template">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/styleBackup.css">
+    <script src="scripts/sorttable.js"></script>
+    <title>JS weather app</title>
+    <script src="scripts/scriptBackups.js" defer></script>
+</head>
+
+<body>
+
+    <div class="average-temp">
+        <div class="tempToggle">
+            <label>Celsius</label>
+            <label class="switch">
+                <input id="tempCheckbox" type="checkbox" onchange="tempToggle()">
+                <span class="slider round"></span>
+            </label>
+            <label>Fahrenheit</label>
+        </div>
+        <!--high / low / average selector -->
+        <div class="radio-options">
+            <label for="low">Low</label>
+            <input class="radio-selector" id="low" name="tempSearch" type="radio" onclick="tempToggle()">
+            <label for="average">Average</label>
+            <input class="radio-selector" id="average" name="tempSearch" type="radio" onclick="tempToggle()" checked>
+            <label for="high">High</label>
+            <input class="radio-selector" id="high" name="tempSearch" type="radio" onclick="tempToggle()">
+        </div>
+
+        <form>
+            <select id="month_menu">
+                <option disabled selected>Choose a month</option>
+                <option value="Jan">January</option>
+                <option value="Feb">February</option>
+                <option value="Mar">March</option>
+                <option value="Apr">April</option>
+                <option value="May">May</option>
+                <option value="Jun">June</option>
+                <option value="Jul">July</option>
+                <option value="Aug">August</option>
+                <option value="Sep">September</option>
+                <option value="Oct">October</option>
+                <option value="Nov">November</option>
+                <option value="Dec">December</option>
+            </select>
+            <select id="avgCelsiusTemp_menu">
+                <option disabled selected>Choose a temp</option>
+                <option value="-15">-15 - -11</option>
+                <option value="-10">-10 - -6</option>
+                <option value="-5">-5 - -1</option>
+                <option value="0">0 - 4</option>
+                <option value="5">5 - 9</option>
+                <option value="10">10 - 14</option>
+                <option value="15">15 - 19</option>
+                <option value="20">20 - 24</option>
+                <option value="25">25 - 29</option>
+                <option value="30">30 - 34</option>
+                <option value="35">35 - 39</option>
+            </select>
+            <select id="highCelsiusTemp_menu">
+                <option disabled selected>Choose a temp</option>
+                <option value="10">10 - 14</option>
+                <option value="15">15 - 19</option>
+                <option value="20">20 - 24</option>
+                <option value="25">25 - 29</option>
+                <option value="30">30 - 34</option>
+                <option value="35">35 - 39</option>
+            </select>
+            <select id="lowCelsiusTemp_menu">
+                <option disabled selected>Choose a temp</option>
+                <option value="-15">-15 - -11</option>
+                <option value="-10">-10 - -6</option>
+                <option value="-5">-5 - -1</option>
+                <option value="0">0 - 4</option>
+                <option value="5">5 - 9</option>
+            </select>
+            <select id="avgFahrenTemp_menu">
+                <option disabled selected>Choose a temp</option>
+                <option value="5">5 - 13</option>
+                <option value="14">14 - 22</option>
+                <option value="23">23 - 31</option>
+                <option value="32">32 - 40</option>
+                <option value="41">41 - 49</option>
+                <option value="50">50 - 58</option>
+                <option value="59">59 - 67</option>
+                <option value="68">68 - 76</option>
+                <option value="77">77 - 85</option>
+                <option value="86">86 - 94</option>
+                <option value="95">95 - 103</option>
+            </select>
+            <!-- fahren high temp search-->
+            <select id="highFahrenTemp_menu">
+                <option disabled selected>Choose a temp</option>
+                <option value="59">59 - 67</option>
+                <option value="68">68 - 76</option>
+                <option value="77">77 - 85</option>
+                <option value="86">86 - 94</option>
+                <option value="95">95 - 103</option>
+            </select>
+            <select id="lowFahrenTemp_menu">
+                <option disabled selected>Choose a temp</option>
+                <option value="5">5 - 13</option>
+                <option value="14">14 - 22</option>
+                <option value="23">23 - 31</option>
+                <option value="32">32 - 40</option>
+                <option value="41">41 - 49</option>
+                <option value="50">50 - 58</option>
+            </select>
+
+            <input id="submit_button" name="submit" type="submit" onclick="combinedWeatherTable(); return false;">
+        </form>
+    </div>
+
+    <!-- <div class="average-info">
+        <div class="avg-temp">
+        <h2 id="avg-degree">_</h2>
+        <span>C</span>
+    </div>
+        <div id="avg-description">_ _ _</div>
+    </div> -->
+
+    <table id="t01" class="sortable">
+        <caption>Departures</caption>
+        <tr>
+            <th>Country</th>
+            <th>City</th>
+            <th id="average_sort">Average</th>
+            <th id="high_sort">High</th>
+            <th id="low_sort">Low</th>
+            <th>Avg rain (days)</th>
+            <!-- <th class="sorttable_nosort">Avg rain (days)</th> -->
+        </tr>
+        <tr class="item">
+            <td id="country"></td>
+            <td id="where"></td>
+            <td id="meanTemp"></td>
+            <td id="tempHigh"></td>
+            <td id="tempLow"></td>
+            <td id="avgRain"></td>
+        </tr>
+    </table>
+
+    <!--High search table -->
+
+    <table id="t02" class="sortable">
+        <caption>Departures</caption>
+        <tr>
+            <th>Country</th>
+            <th>City</th>
+            <th id="high_sort">High</th>
+            <th id="low_sort">Low</th>
+            <th id="average_sort">Average</th>
+            <th>Avg rain (days)</th>
+            <!-- <th class="sorttable_nosort">Avg rain (days)</th> -->
+        </tr>
+        <tr class="item">
+            <td id="country"></td>
+            <td id="where"></td>
+            <td id="meanTemp"></td>
+            <td id="tempHigh"></td>
+            <td id="tempLow"></td>
+            <td id="avgRain"></td>
+        </tr>
+    </table>
+
+    <!--Low search table-->
+
+    <table id="t03" class="sortable">
+        <caption>Departures</caption>
+        <tr>
+            <th>Country</th>
+            <th>City</th>
+            <th id="low_sort">Low</th>
+            <th id="high_sort">High</th>
+            <th id="average_sort">Average</th>
+            <th>Avg rain (days)</th>
+            <!-- <th class="sorttable_nosort">Avg rain (days)</th> -->
+        </tr>
+        <tr class="item">
+            <td id="country"></td>
+            <td id="where"></td>
+            <td id="meanTemp"></td>
+            <td id="tempHigh"></td>
+            <td id="tempLow"></td>
+            <td id="avgRain"></td>
+        </tr>
+    </table>
+
+    <!-- <table id="t02" class="sortable">
+        <caption>Cities</caption>
+        <tr>
+            <th>Country</th>
+            <th>City</th>
+            <th>Average</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Avg rain (days)</th> -->
+    <!-- <th class="sorttable_nosort">Avg rain (days)</th> -->
+    <!-- </tr>
+        <tr class="item">
+            <td id="country"></td>
+            <td id="where"></td>
+            <td id="meanTemp"></td>
+            <td id="tempHigh"></td>
+            <td id="tempLow"></td>
+            <td id="avgRain"></td>
+            </tr>
+    </table> -->
+
+</body>
+
+</html>
