@@ -1,16 +1,10 @@
 Weather app
 
-- deliver different pictures based on wetaher preference
-- deliver day or night image based on time of day
 - intro and disclaimer write up
-- error message when no results
 - highlight celsius or fahren when selected
-- add adsense
 - optimize images for mobile
 - remove comments & clean code
-- free API available for added functionality
 - bookmark reminder
-- remove original about message and replace with new search message on 'New SEarch'
 - audio click to temp toggle
 - satisfying button to press (maybe round)
 - style drop down menus
@@ -20,12 +14,13 @@ Weather app
 - Dev tools audit
 - hide JSON
 - donate process and writeup
-- contrast ratio function
 - PWA compatibility
 - phone testing
 - SEO research for domain and write up
 - social share icons
 - meta description
+- add shine to elements css
+- pssibly couple of icons
 
 ------------------------------------
 Domain ideas
@@ -40,6 +35,14 @@ Future updates
 - what to do 
 - generate Google search from Cites and countries list
 - make download of list an option?
+- deliver different pictures based on weather preference
+- add adsense
+- free API available for added functionality
+- contrast ratio function
+- remove original about message and replace with new search message on 'New SEarch'
+- deliver day or night image based on time of day
+- highlight celsius or fahren when selected
+- video background
 
 -------------------------------------
 
@@ -75,3 +78,4 @@ Completed
 - H1 title (Weather planner etc.) **
 - fade images out **
 - consider ad placement **
+- error message when no results **

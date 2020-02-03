@@ -222,6 +222,11 @@ function resetTable() {
 // combined function
 
 function combinedWeatherTable() {
+    if (typeof click === "undefined") {
+        document.getElementById("error-text").style.display = "initial";
+        document.getElementById("ogMenus").style.display = "none";
+        document.getElementById("resetButton").style.display = "flex";
+    }
     // working code
     INTROPAR.style.display = "none";
     tempMonth = document.getElementById("month_menu").value;
@@ -279,6 +284,7 @@ function combinedWeatherTable() {
     if (TABLEHEADERCOLOR.style.backgroundColor === "rgba(20, 110, 255, 0.8)") {
         TABLEHEADERCOLOR.style.color = "white";
     }  
+    document.getElementById("error-text").style.display = "none";
     document.getElementById("ogMenus").style.display = "none";
     document.getElementById("resetButton").style.display = "flex";
 }
