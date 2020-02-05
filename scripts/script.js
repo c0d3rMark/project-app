@@ -250,7 +250,7 @@ function combinedWeatherTable() {
         }
         // auto click appropriate column for sort
         sort.click();
-        tableCaption.innerHTML = `Departures with an average temperature of ${fahrenAvgTemp}${FAHSYMBOL} to ${parseInt(fahrenAvgTemp) + 8}${FAHSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
+        tableCaption.innerHTML = `Destinations with an average temperature of ${fahrenAvgTemp}${FAHSYMBOL} to ${parseInt(fahrenAvgTemp) + 8}${FAHSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
         TABLEHEADERCOLOR.style.backgroundColor = `${FAHCOLORS[fahrenAvgTemp]}`;
         localStorage.checked = true;
         // tableCaption.style.background = `${FAHCOLORS[fahrenAvgTemp]}`;
@@ -275,7 +275,7 @@ function combinedWeatherTable() {
         }
         // auto click appropriate column for sort
         sort.click();
-        tableCaption.innerHTML = `Departures with an average temperature of ${avgMonthlyTemp}${CELSYMBOL} to ${parseInt(avgMonthlyTemp) + 4}${CELSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
+        tableCaption.innerHTML = `Destinations with an average temperature of ${avgMonthlyTemp}${CELSYMBOL} to ${parseInt(avgMonthlyTemp) + 4}${CELSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
         TABLEHEADERCOLOR.style.backgroundColor = `${CELCOLORS[avgMonthlyTemp]}`;
         localStorage.checked = false;
         // tableCaption.style.background = `${CELCOLORS[avgMonthlyTemp]}`;

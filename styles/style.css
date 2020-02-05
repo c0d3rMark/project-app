@@ -18,13 +18,14 @@ body {
   /* background: url('../images/california-1751455_1920.jpg') no-repeat; */
   /* background: linear-gradient(rgba(255,255,255,100)),url(../images/california-1751455_1920.jpg) no-repeat; */
   /* background-color: black; */
-  background-image: url(../images/food.png); 
-  background-color: rgba(40, 40, 40, 0.9);
-  /* background-image: -webkit-gradient(linear, left top, left bottom, color-stop(55vh, rgba(253, 253, 253,0)),color-stop(95vh, rgba(253, 253, 253,1))), url(../images/beach.png);
-  background-image: linear-gradient(to bottom, rgba(253, 253, 253,0) 75vh,rgb(240, 247, 253) 95vh), url(../images/black-thread.png); */
-  /* background-size: cover;
-  background-position: center; */
-  /* background-repeat: no-repeat; */
+  /* background-image: url(../images/globe.jpg);  */
+  /* background-size: 100%; */
+  /* background-color: rgba(40, 40, 40, 0.9); */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(55vh, rgba(253, 253, 253,0)),color-stop(95vh, rgba(253, 253, 253,1))), url(../images/globe.jpg);
+  background-image: linear-gradient(to bottom, rgba(36,116,81,0) 85vh,rgb(40, 40, 40) 95vh), url(../images/globe.jpg); 
+  /* background-size: cover; */
+    /* background-position: center;
+  background-repeat: no-repeat;*/
   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
   color: white;
   padding-bottom: 80px;
@@ -35,19 +36,21 @@ header {
   width: 100%;
   min-height: 40px;
   /* background-color: rgba(253, 253, 253, 0.9); */
-  background: rgb(90, 90, 90);
+  background: rgba(40, 40, 40,1);
   /* background: linear-gradient(0deg, rgba(234,215,201,0.4) 0%, rgba(142,177,199,1) 100%); */
   text-align: center;
   padding-top: 10px;
 }
 
 #googleAd {
+  box-shadow: inset 0 0 5px grey;
   margin: 40px 0 10px 0;
   bottom: 0;
 }
 
 #googleAdBottom {
   display: none;
+  box-shadow: inset 0 0 5px grey;
   /* margin: 60px 0; */
 }
 
@@ -102,13 +105,18 @@ header {
 
 .tempHeader {
   margin-top: 0px;
-  /* color: rgba(253, 253, 253, 0.8); */
+  background-color: rgba(40,40,40, 0.9);
+  /* color: black; */
+  padding: 0 20px 20px 20px;
+  border-radius: 20px;
+  /* box-shadow: inset 1px 1px 5px grey; */
 }
 
 .tempHeader h1 {
   font-size: 60px;
   text-align: center;
   padding-bottom: 20px;
+  /* text-shadow: 0 0 5px grey; */
   /* -webkit-box-pack: center;
   justify-content: center;
   margin-bottom: 20px;
@@ -238,6 +246,12 @@ input:checked+.slider:before {
   padding-top: 10px;
   text-align: center;
 }
+
+/* #month_menu,
+#avgCelsiusTemp_menu,
+#avgFahrenTemp_menu {
+  box-shadow: inset 0 0 5px grey;
+} */
 
 #submit_label {
   width: 100%;
@@ -401,7 +415,7 @@ td {
 
 footer {
   position: absolute;
-  background: rgb(90, 90, 90);
+  background: rgb(40, 40, 40);
   /* background-color: rgba(253, 253, 253, 0.9); */
   /* height: 30px; */
   width: 100%;
