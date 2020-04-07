@@ -10,36 +10,47 @@
     <meta name="keywords" content="HTML,CSS,XML,JavaScript">
     <meta name="author" content="John Doe">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/styles/styleBackup.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="scripts/sorttable.js"></script>
     <title>JS weather app</title>
-    <script src="scripts/scriptBackups.js" defer></script>
+    <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
 
+    <!-- <video autoplay muted loop id="myVideo">
+        <source src="videos/Sea.mp4" type="video/mp4">
+      </video> -->
+
+    <header>
+        <input class="head_buttons" type="button" value="About" onclick="aboutLink();">
+        <input class="head_buttons" type="button" value="Donate">
+    </header>
+    <img src="//lh5.ggpht.com/XJZJYLBAMMyyV3e0oY1jTiBxmA17G4BI_2KLG3MlEsVFUjHBBB1VHy1SgCd9gWwbZnlitH3T=w234" height="auto" id="googleAd">
+    <!-- <div class="ads">
+    <img src="//lh5.ggpht.com/XJZJYLBAMMyyV3e0oY1jTiBxmA17G4BI_2KLG3MlEsVFUjHBBB1VHy1SgCd9gWwbZnlitH3T=w234" height="auto" id="smallerAd">
+<img src="//lh5.ggpht.com/XJZJYLBAMMyyV3e0oY1jTiBxmA17G4BI_2KLG3MlEsVFUjHBBB1VHy1SgCd9gWwbZnlitH3T=w234" height="auto" id="smallerAdRight">
+</div> -->
+    <div class="tempHeader">
+        <h1>Where 2 go?</h1>
+    <h2>Temperature preference</h2>
+    </div>
     <div class="average-temp">
         <div class="tempToggle">
-            <label>Celsius</label>
+            <label class="labels">&#8451</label>
+            <div class="switch-div">
             <label class="switch">
                 <input id="tempCheckbox" type="checkbox" onchange="tempToggle()">
-                <span class="slider round"></span>
+                <span id="tempSlider" class="slider round"></span>
             </label>
-            <label>Fahrenheit</label>
-        </div>
-        <!--high / low / average selector -->
-        <div class="radio-options">
-            <label for="low">Low</label>
-            <input class="radio-selector" id="low" name="tempSearch" type="radio" onclick="tempToggle()">
-            <label for="average">Average</label>
-            <input class="radio-selector" id="average" name="tempSearch" type="radio" onclick="tempToggle()" checked>
-            <label for="high">High</label>
-            <input class="radio-selector" id="high" name="tempSearch" type="radio" onclick="tempToggle()">
+            </div>
+            <label class="labels">&#8457</label>
         </div>
 
         <form>
+            <div id="ogMenus">
             <select id="month_menu">
-                <option disabled selected>Choose a month</option>
+                <option disabled selected>Choose month</option>
                 <option value="Jan">January</option>
                 <option value="Feb">February</option>
                 <option value="Mar">March</option>
@@ -54,168 +65,88 @@
                 <option value="Dec">December</option>
             </select>
             <select id="avgCelsiusTemp_menu">
-                <option disabled selected>Choose a temp</option>
-                <option value="-15">-15 - -11</option>
-                <option value="-10">-10 - -6</option>
-                <option value="-5">-5 - -1</option>
-                <option value="0">0 - 4</option>
-                <option value="5">5 - 9</option>
-                <option value="10">10 - 14</option>
-                <option value="15">15 - 19</option>
-                <option value="20">20 - 24</option>
-                <option value="25">25 - 29</option>
-                <option value="30">30 - 34</option>
-                <option value="35">35 - 39</option>
-            </select>
-            <select id="highCelsiusTemp_menu">
-                <option disabled selected>Choose a temp</option>
-                <option value="10">10 - 14</option>
-                <option value="15">15 - 19</option>
-                <option value="20">20 - 24</option>
-                <option value="25">25 - 29</option>
-                <option value="30">30 - 34</option>
-                <option value="35">35 - 39</option>
-            </select>
-            <select id="lowCelsiusTemp_menu">
-                <option disabled selected>Choose a temp</option>
-                <option value="-15">-15 - -11</option>
-                <option value="-10">-10 - -6</option>
-                <option value="-5">-5 - -1</option>
-                <option value="0">0 - 4</option>
-                <option value="5">5 - 9</option>
-            </select>
-            <select id="avgFahrenTemp_menu">
-                <option disabled selected>Choose a temp</option>
-                <option value="5">5 - 13</option>
-                <option value="14">14 - 22</option>
-                <option value="23">23 - 31</option>
-                <option value="32">32 - 40</option>
-                <option value="41">41 - 49</option>
-                <option value="50">50 - 58</option>
-                <option value="59">59 - 67</option>
-                <option value="68">68 - 76</option>
-                <option value="77">77 - 85</option>
-                <option value="86">86 - 94</option>
-                <option value="95">95 - 103</option>
-            </select>
-            <!-- fahren high temp search-->
-            <select id="highFahrenTemp_menu">
-                <option disabled selected>Choose a temp</option>
-                <option value="59">59 - 67</option>
-                <option value="68">68 - 76</option>
-                <option value="77">77 - 85</option>
-                <option value="86">86 - 94</option>
-                <option value="95">95 - 103</option>
-            </select>
-            <select id="lowFahrenTemp_menu">
-                <option disabled selected>Choose a temp</option>
-                <option value="5">5 - 13</option>
-                <option value="14">14 - 22</option>
-                <option value="23">23 - 31</option>
-                <option value="32">32 - 40</option>
-                <option value="41">41 - 49</option>
-                <option value="50">50 - 58</option>
+                <option disabled selected>Average temp</option>
+                <!-- <option value="-15">-15 - -11</option> -->
+                <option value="-10">-10 to -6</option>
+                <option value="-5">-5 to -1</option>
+                <option value="0">0 to 4</option>
+                <option value="5">5 to 9</option>
+                <option value="10">10 to 14</option>
+                <option value="15">15 to 19</option>
+                <option value="20">20 to 24</option>
+                <option value="25">25 to 29</option>
+                <option value="30">30 to 34</option>
+                <!-- <option value="35">35 - 39</option> -->
             </select>
 
-            <input id="submit_button" name="submit" type="submit" onclick="combinedWeatherTable(); return false;">
+            <select id="avgFahrenTemp_menu">
+                <option disabled selected>Average temp</option>
+                <!-- <option value="5">5 - 13</option> -->
+                <option value="14">14 - 22</option>
+                <option value="23">23 - 31</option>
+                <option value="32">32 - 40</option>
+                <option value="41">41 - 49</option>
+                <option value="50">50 - 58</option>
+                <option value="59">59 - 67</option>
+                <option value="68">68 - 76</option>
+                <option value="77">77 - 85</option>
+                <option value="86">86- 94</option>
+                <!-- <option value="95">95 - 103</option> -->
+            </select>
+
+            <!-- <input id="submit_button" name="submit" type="submit" onclick="combinedWeatherTable(); return false;"> -->
+            <!-- <label for="submit_button" id="submit_label">Click for your departures</label> -->
+            <!-- <input id="submit_button" name="submit" type="image" src="/images/plane-icon.png" onclick="combinedWeatherTable(); return false;"> -->
+            <button id="submit_button" name="submit" type="button" onclick="combinedWeatherTable(); return false;">Click for destinations</button>
+            </div>
+            <div id="resetButton">
+            <input value="New Search" type="submit" onclick="resetTable();">
+            </div>
         </form>
     </div>
 
-    <!-- <div class="average-info">
-        <div class="avg-temp">
-        <h2 id="avg-degree">_</h2>
-        <span>C</span>
+    <div id="intro-text">
+        <h2>About this tool</h2>
+        <p>One of the most exciting parts of travel planning is working out a shortlist of potential locations. If you're anything like me, this involves some research to narrow down possibilities. One of the key factors for my travel planning is weather averages. I want to make sure the locations I have in mind meet the weather criteria I am looking for. The way I have done this previously, is to manually search each individual location and sort through the data.</p><br>
+
+        <p>I found this approach to be time consuming and often limiting in the results. For instance, when you search for weather averages of potential travel locations, you are working from a list of holiday destinantions you've already decided on. This is not bad if you know where you'd like to go. 
+        For me, a more interesting questions is, 
+            
+        where should I travel in June with an average temperature of 20 degrees celsius?</p><br>
+            
+        <p>As a result this tool came to fruition and allows you to start your holiday planning journey with a quick shortlist of travel possibilities. It can dramatically reduce the time to curate a list destinantions based on weather criteria. Also, provide exciting new travel ideas by showing locations you may have previously overlooked.</p><br>
+            
+        Happy travel planning : ) <br><br> 
+
+        <h2>Disclaimer</h2>    
+        Quos dolores ab omnis, voluptatem hic quas accusantium aliquid. Consequatur cupiditate reprehenderit assumenda aliquam quibusdam veritatis. Molestias, est numquam nesciunt asperiores illum eaque culpa, molestiae perspiciatis voluptate soluta quas. Esse eaque earum unde, ratione obcaecati dolores recusandae exercitationem quam facere dicta, ad repellat eligendi aliquid possimus pariatur voluptate delectus quisquam?</p>
     </div>
-        <div id="avg-description">_ _ _</div>
-    </div> -->
+
+    <div id="error-text">
+        <p>Sorry we couldn't find any results matching your search. Please try another temperature range.</p>
+    </div>
 
     <table id="t01" class="sortable">
-        <caption>Departures</caption>
-        <tr>
-            <th>Country</th>
+        <caption id="table-caption"></caption>
+        <tr id="table-header">
+            <th class="top-left">Country</th>
             <th>City</th>
             <th id="average_sort">Average</th>
-            <th id="high_sort">High</th>
-            <th id="low_sort">Low</th>
-            <th>Avg rain (days)</th>
-            <!-- <th class="sorttable_nosort">Avg rain (days)</th> -->
+            <th class="top-right">Avg rain (days)</th>
         </tr>
         <tr class="item">
             <td id="country"></td>
             <td id="where"></td>
             <td id="meanTemp"></td>
-            <td id="tempHigh"></td>
-            <td id="tempLow"></td>
             <td id="avgRain"></td>
         </tr>
     </table>
 
-    <!--High search table -->
+    <img src="//lh5.ggpht.com/XJZJYLBAMMyyV3e0oY1jTiBxmA17G4BI_2KLG3MlEsVFUjHBBB1VHy1SgCd9gWwbZnlitH3T=w234" height="auto" id="googleAdBottom">
 
-    <table id="t02" class="sortable">
-        <caption>Departures</caption>
-        <tr>
-            <th>Country</th>
-            <th>City</th>
-            <th id="high_sort">High</th>
-            <th id="low_sort">Low</th>
-            <th id="average_sort">Average</th>
-            <th>Avg rain (days)</th>
-            <!-- <th class="sorttable_nosort">Avg rain (days)</th> -->
-        </tr>
-        <tr class="item">
-            <td id="country"></td>
-            <td id="where"></td>
-            <td id="meanTemp"></td>
-            <td id="tempHigh"></td>
-            <td id="tempLow"></td>
-            <td id="avgRain"></td>
-        </tr>
-    </table>
-
-    <!--Low search table-->
-
-    <table id="t03" class="sortable">
-        <caption>Departures</caption>
-        <tr>
-            <th>Country</th>
-            <th>City</th>
-            <th id="low_sort">Low</th>
-            <th id="high_sort">High</th>
-            <th id="average_sort">Average</th>
-            <th>Avg rain (days)</th>
-            <!-- <th class="sorttable_nosort">Avg rain (days)</th> -->
-        </tr>
-        <tr class="item">
-            <td id="country"></td>
-            <td id="where"></td>
-            <td id="meanTemp"></td>
-            <td id="tempHigh"></td>
-            <td id="tempLow"></td>
-            <td id="avgRain"></td>
-        </tr>
-    </table>
-
-    <!-- <table id="t02" class="sortable">
-        <caption>Cities</caption>
-        <tr>
-            <th>Country</th>
-            <th>City</th>
-            <th>Average</th>
-            <th>High</th>
-            <th>Low</th>
-            <th>Avg rain (days)</th> -->
-    <!-- <th class="sorttable_nosort">Avg rain (days)</th> -->
-    <!-- </tr>
-        <tr class="item">
-            <td id="country"></td>
-            <td id="where"></td>
-            <td id="meanTemp"></td>
-            <td id="tempHigh"></td>
-            <td id="tempLow"></td>
-            <td id="avgRain"></td>
-            </tr>
-    </table> -->
+    <footer>
+        <p>C0d3D_D3s1gN &#169; 2019</p>
+    </footer>
 
 </body>
 

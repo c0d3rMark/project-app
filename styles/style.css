@@ -381,6 +381,10 @@ input:checked+.slider:before {
   padding-bottom: 10px; */
 }
 
+#mobileTable {
+  display: none;
+}
+
 /* #table-header {
   background-color: rgba(173, 236, 252, 0.8);
   color: rgb(66, 66, 66);
