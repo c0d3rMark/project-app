@@ -30,7 +30,7 @@ body {
   background-repeat: no-repeat;*/
   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
   color: white;
-  padding-bottom: 80px;
+  /* padding-bottom: 80px; */
 }
 
 header {
@@ -43,6 +43,7 @@ header {
   /* background: linear-gradient(0deg, rgba(234,215,201,0.4) 0%, rgba(142,177,199,1) 100%); */
   text-align: center;
   padding-top: 10px;
+  margin-bottom: 50px;
 }
 
 .head_buttons {
@@ -292,7 +293,15 @@ input:checked+.slider:before {
 #resetButton {
   display: none;
   -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(255, 224, 25, 0.95);
+  justify-content: center;
+  font-size: 18px;
 }
 
 #intro-text {
@@ -343,6 +352,7 @@ input:checked+.slider:before {
   border-radius: 10px;
   box-shadow: inset 0 0 5px grey;
   font-weight: bold;
+  font-size: 17px;
 }
 
 .effects_container {
@@ -361,7 +371,7 @@ input:checked+.slider:before {
 }
 
 #t01 {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   width: 90vw;
   display: none;
   background: rgba(253, 253, 253, 1);
@@ -463,5 +473,23 @@ footer p {
     display: initial;
     position: absolute;
     bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tempHeader h1 {
+    font-size: 50px;
+  }
+  .tempHeader {
+    width: 90%;
+  }
+  #mobile-caption {
+    font-weight: initial;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .tempHeader h1 {
+    font-size: 40px;
   }
 }
