@@ -444,7 +444,8 @@ td {
   padding-left: 7px; */
 }
 
-#t01 th {
+#t01 th,
+#mobileTable th {
   text-align: left;
   text-transform: uppercase;
   padding-left: 7px;
