@@ -448,7 +448,7 @@ td {
 #mobileTable th {
   text-align: left;
   text-transform: uppercase;
-  padding-left: 7px;
+  padding: 7px;
 }
 
 footer {
@@ -489,15 +489,29 @@ footer p {
   }
 }
 
+@media screen and (max-width: 440px) {
+  #table-caption {
+    font-weight: normal;
+  }
+}
+
 @media screen and (max-width: 380px) {
   th {
-    padding-left: 0;
     font-size: 13px;
   }
 
-  td,
-  #table-caption {
+  td {
     font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  th {
+    font-size: 12px;
+  }
+
+  td {
+    font-size: 12px;
   }
 }
 
