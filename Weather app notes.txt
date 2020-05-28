@@ -21,6 +21,8 @@ Weather app
 - meta description
 - add shine to elements css
 - pssibly couple of icons
+- Cool button
+- Hide Temp toggle when results show
 
 ------------------------------------
 Domain ideas
