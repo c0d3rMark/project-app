@@ -54,7 +54,6 @@ const INTROPAR = document.getElementById("intro-text");
 // global table variable to display appropriate table
 
 var myTable;
-var otherTable;
 
 // select sort columns
 
@@ -217,8 +216,8 @@ function smallerTable(iterate, col3) {
 // function to make make mobile table
 
 function responsiveTable(iterate, col2) {
-    otherTable.style.display = "table";
-    let newRow = otherTable.insertRow();
+    myTable.style.display = "table";
+    let newRow = myTable.insertRow();
     let cell1 = newRow.insertCell();
     let cell2 = newRow.insertCell();
     let cell3 = newRow.insertCell();
@@ -294,33 +293,22 @@ function combinedWeatherTable() {
             celsiusNum = parseFloat(celsiusIndex[0]);
             celsiusInt = Math.round(celsiusNum);
             // return object if greater or equal to input but less than next degree
-            if (tempSearch === "average" && celsiusInt >= avgMonthlyTemp && celsiusInt < limit) {
-
-                // Full table
+            if (tempSearch === "average" && celsiusInt >= avgMonthlyTemp && celsiusInt < limit && windowWidth > 440) {
                 myTable = document.getElementById("t01");
                 smallerTable(x, celsiusInt);
                 sort = document.getElementById("average_sort");
                 tableCaption.innerHTML = `Destinations with an average temperature of ${avgMonthlyTemp}${CELSYMBOL} to ${parseInt(avgMonthlyTemp) + 4}${CELSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
                 TABLEHEADERCOLOR.style.backgroundColor = `${CELCOLORS[avgMonthlyTemp]}`;
-                
-                // Mobile table
-                otherTable = document.getElementById("mobileTable");
+            } else if (tempSearch === "average" && celsiusInt >= avgMonthlyTemp && celsiusInt < limit && windowWidth < 440) {
+                myTable = document.getElementById("mobileTable");
                 responsiveTable(x, celsiusInt);
-                responsiveSort = document.getElementById("mobile_sort");
+                sort = document.getElementById("mobile_sort");
                 mobileCaption.innerHTML = `Destinations with an average temperature of ${avgMonthlyTemp}${CELSYMBOL} to ${parseInt(avgMonthlyTemp) + 4}${CELSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
                 MOBILEHEADERCOLOR.style.backgroundColor = `${CELCOLORS[avgMonthlyTemp]}`;
-            } 
-            // else if (tempSearch === "average" && celsiusInt >= avgMonthlyTemp && celsiusInt < limit && windowWidth < 440) {
-            //     otherTable = document.getElementById("mobileTable");
-            //     responsiveTable(x, celsiusInt);
-            //     sort = document.getElementById("mobile_sort");
-            //     mobileCaption.innerHTML = `Destinations with an average temperature of ${avgMonthlyTemp}${CELSYMBOL} to ${parseInt(avgMonthlyTemp) + 4}${CELSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
-            //     MOBILEHEADERCOLOR.style.backgroundColor = `${CELCOLORS[avgMonthlyTemp]}`;
-            // }
+            }
         }
         // auto click appropriate column for sort
         sort.click();
-        responsiveSort.click();
         localStorage.checked = false;
         // tableCaption.style.background = `${CELCOLORS[avgMonthlyTemp]}`;
     }
