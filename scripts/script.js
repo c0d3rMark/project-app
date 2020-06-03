@@ -1,26 +1,21 @@
-// -----------------------------------------------------------------------
+// ---------------------------------------------
 
 // gain access to JSON file onload
 
 window.onload = function () {
     accessJson();
-    // checkBox.checked = false;
-    // checks value of global variable to toggle temp
     if (localStorage.checked === 'true') {
         tempType = 'fahren';
         checkBox.checked = true;
         AVGFAHRENMENU.style.display = "initial";
         AVGCELSIUSMENU.style.display = "none";
-        // document.getElementById("intro-text").style.display = "none";
-        } else {
-            tempType = 'celsius';
-            checkBox.checked = false;
-            AVGFAHRENMENU.style.display = "none";
-            AVGCELSIUSMENU.style.display = "initial";
-            // document.getElementById("intro-text").style.display = "none";       
-        }
-        console.log(tempType, checkBox.checked, localStorage.checked);
-        introDisplay();
+    } else {
+        tempType = 'celsius';
+        checkBox.checked = false;
+        AVGFAHRENMENU.style.display = "none";
+        AVGCELSIUSMENU.style.display = "initial";
+    }
+    introDisplay();
 };
 
 // -------------------------------------------
@@ -132,24 +127,12 @@ function accessJson() {
     xhr.onload = function () {
         var my_JSON_object = xhr.responseText;
         parsedJSON = JSON.parse(my_JSON_object);
-        console.log(parsedJSON.length);
     }
 }
-
-// --------------------------------------------
-
-// function backgroundImg() {
-//     let bodyTag = document.body;
-//     if (screen.height <= 1180) {
-//         document.body.style.backgroundImage = "url('../images/maldives-1993704_1920.jpg');"
-//     }
-// }
 
 // toggle celsius and fahren drop menu options
 
 function tempToggle() {
-    // document.getElementById("tempSlider").transition = "all 0.4s";
-    // let checkBox = document.getElementById("tempCheckbox");
     if (checkBox.checked) {
         tempType = "fahren";
     } else {
@@ -181,10 +164,9 @@ function displayMenu() {
 function introDisplay() {
     let paraDisplay = sessionStorage.getItem("open");
     if (paraDisplay === "false") {
-        console.log("this is keeping it's value");
         INTROPAR.style.display = "none";
     } else {
-        INTROPAR.style.display = "initial"; 
+        INTROPAR.style.display = "initial";
     }
 }
 
@@ -194,7 +176,7 @@ function aboutLink() {
     } else {
         INTROPAR.style.display = "initial";
     }
-} 
+}
 
 // function to make make smaller 4 column table
 
@@ -213,115 +195,95 @@ function smallerTable(iterate, col3) {
     }
 }
 
-// function to make make mobile table
-
-// function responsiveTable(iterate, col2) {
-//     myTable.style.display = "table";
-//     let newRow = myTable.insertRow();
-//     let cell1 = newRow.insertCell();
-//     let cell2 = newRow.insertCell();
-//     let cell3 = newRow.insertCell();
-//     if (tempSearch === "average") {
-//         cell1.innerHTML = `${parsedJSON[iterate]["Country"]}, ${parsedJSON[iterate]["City"]}`;
-//         // cell2.innerHTML = parsedJSON[iterate]["City"];
-//         cell2.innerHTML = col2;
-//         cell3.innerHTML = Math.round(parsedJSON[iterate][`${tempMonth}Rain`]);
-//     }
-// }
-
 // reset the table before function creates new table and sets session variable
 
 function resetTable() {
     document.getElementById("t01").remove();
     sessionStorage.setItem("open", "false");
- }
+}
 
 // combined function
 
 function combinedWeatherTable() {
-    let windowWidth = document.documentElement.clientWidth;
-    console.log(typeof windowWidth);
     if (typeof click === "undefined") {
         document.getElementById("error-text").style.display = "initial";
         document.getElementById("ogMenus").style.display = "none";
         document.getElementById("resetButton").style.display = "flex";
     }
-    // working code
+
     INTROPAR.style.display = "none";
     tempMonth = document.getElementById("month_menu").value;
     let tableCaption = document.getElementById("table-caption");
-    let mobileCaption = document.getElementById("mobile-caption");
+
     // fahren tables
+
     let fahrenAvgTemp = document.getElementById("avgFahrenTemp_menu").value;
     let farenIntTemp = parseInt(fahrenAvgTemp);
     let fahrenLimit = farenIntTemp + 9;
     if (tempType === "fahren") {
         for (let f in parsedJSON) {
-            // seperates the celsius & fahrenheit numbers to compare to input
+
+            // seperates the fahrenheit numbers to compare to input
+
             fahrenIndex = parsedJSON[f][tempMonth].match(FAHRENHEIT);
             fahrenNum = parseFloat(fahrenIndex[1]);
             fahrenInt = Math.round(fahrenNum);
+
             // return object if greater or equal to input but less than next degree
+
             if (tempSearch === "average" && fahrenInt >= fahrenAvgTemp && fahrenInt < fahrenLimit) {
                 myTable = document.getElementById("t01");
                 smallerTable(f, fahrenInt);
                 sort = document.getElementById("average_sort");
                 tableCaption.innerHTML = `Destinations with an average temperature of ${fahrenAvgTemp}${FAHSYMBOL} to ${parseInt(fahrenAvgTemp) + 8}${FAHSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
                 TABLEHEADERCOLOR.style.backgroundColor = `${FAHCOLORS[fahrenAvgTemp]}`;
-            } 
-            
-            // else if (tempSearch === "average" && fahrenInt >= fahrenAvgTemp && fahrenInt < fahrenLimit && windowWidth < 440) {
-            //     myTable = document.getElementById("mobileTable");
-            //     responsiveTable(f, fahrenInt);
-            //     sort = document.getElementById("mobile_sort");
-            //     mobileCaption.innerHTML = `Destinations with an average temperature of ${fahrenAvgTemp}${FAHSYMBOL} to ${parseInt(fahrenAvgTemp) + 8}${FAHSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
-            //     MOBILEHEADERCOLOR.style.backgroundColor = `${FAHCOLORS[fahrenAvgTemp]}`;
-            // }
+            }
         }
+
         // auto click appropriate column for sort
+
         sort.click();
         localStorage.checked = true;
-        // tableCaption.style.background = `${FAHCOLORS[fahrenAvgTemp]}`;
-        // document.getElementById("t01").style.backgroundColor = `${FAHCOLORS[fahrenAvgTemp]}`;
     }
+
     // celsius tables
+
     let avgMonthlyTemp = document.getElementById("avgCelsiusTemp_menu").value;
     let intTemp = parseInt(avgMonthlyTemp);
     let limit = intTemp + 5;
     if (tempType === "celsius") {
         for (let x in parsedJSON) {
-            // seperates the celsius & fahrenheit numbers to compare to input
+
+            // seperates the celsius numbers to compare to input
+
             celsiusIndex = parsedJSON[x][tempMonth].match(CELSIUS);
             celsiusNum = parseFloat(celsiusIndex[0]);
             celsiusInt = Math.round(celsiusNum);
+
             // return object if greater or equal to input but less than next degree
+
             if (tempSearch === "average" && celsiusInt >= avgMonthlyTemp && celsiusInt < limit) {
                 myTable = document.getElementById("t01");
                 smallerTable(x, celsiusInt);
                 sort = document.getElementById("average_sort");
                 tableCaption.innerHTML = `Destinations with an average temperature of ${avgMonthlyTemp}${CELSYMBOL} to ${parseInt(avgMonthlyTemp) + 4}${CELSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
                 TABLEHEADERCOLOR.style.backgroundColor = `${CELCOLORS[avgMonthlyTemp]}`;
-            } 
-            
-            // else if (tempSearch === "average" && celsiusInt >= avgMonthlyTemp && celsiusInt < limit && windowWidth < 440) {
-            //     myTable = document.getElementById("mobileTable");
-            //     responsiveTable(x, celsiusInt);
-            //     sort = document.getElementById("mobile_sort");
-            //     mobileCaption.innerHTML = `Destinations with an average temperature of ${avgMonthlyTemp}${CELSYMBOL} to ${parseInt(avgMonthlyTemp) + 4}${CELSYMBOL} in the month of ${MONTHDICT[tempMonth]}`;
-            //     MOBILEHEADERCOLOR.style.backgroundColor = `${CELCOLORS[avgMonthlyTemp]}`;
-            // }
+            }
         }
+
         // auto click appropriate column for sort
+
         sort.click();
         localStorage.checked = false;
-        // tableCaption.style.background = `${CELCOLORS[avgMonthlyTemp]}`;
     }
+
     // change table header color for contrast
+
     if (TABLEHEADERCOLOR.style.backgroundColor === "rgba(20, 110, 255, 0.8)") {
         TABLEHEADERCOLOR.style.color = "white";
-    }  
+    }
+
     document.getElementById("error-text").style.display = "none";
     document.getElementById("ogMenus").style.display = "none";
     document.getElementById("resetButton").style.display = "flex";
 }
-
