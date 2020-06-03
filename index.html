@@ -6,9 +6,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Template">
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-    <meta name="author" content="John Doe">
+    <meta name="description" content="">
+    <meta name="keywords" content="Holiday weather, holiday planning">
+    <meta name="author" content="C0d3D_D3s1gN">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="scripts/sorttable.js"></script>
@@ -18,114 +18,110 @@
 
 <body>
 
-    <!-- <video autoplay muted loop id="myVideo">
-        <source src="videos/Sea.mp4" type="video/mp4">
-      </video> -->
-
     <header>
         <input class="head_buttons" type="button" value="About" onclick="aboutLink();">
-        <input class="head_buttons" type="button" value="Donate">
     </header>
-    <!-- <img src="//lh5.ggpht.com/XJZJYLBAMMyyV3e0oY1jTiBxmA17G4BI_2KLG3MlEsVFUjHBBB1VHy1SgCd9gWwbZnlitH3T=w234" height="auto" id="googleAd"> -->
-    <!-- <div class="ads">
-    <img src="//lh5.ggpht.com/XJZJYLBAMMyyV3e0oY1jTiBxmA17G4BI_2KLG3MlEsVFUjHBBB1VHy1SgCd9gWwbZnlitH3T=w234" height="auto" id="smallerAd">
-<img src="//lh5.ggpht.com/XJZJYLBAMMyyV3e0oY1jTiBxmA17G4BI_2KLG3MlEsVFUjHBBB1VHy1SgCd9gWwbZnlitH3T=w234" height="auto" id="smallerAdRight">
-</div> -->
+
     <div class="tempHeader">
         <h1>Where 2 go?</h1>
-        <!-- <i class="fa fa-sun-o fa-6x" aria-hidden="true"></i> -->
-        <!-- <i class="fa fa-snowflake-o" aria-hidden="true"></i> -->
-    <h2>Temperature preference</h2>
+        <h2>Temperature preference</h2>
     </div>
     <div class="average-temp">
         <div class="tempToggle">
             <label class="labels">&#8451</label>
             <div class="switch-div">
-            <label class="switch">
-                <input id="tempCheckbox" type="checkbox" onchange="tempToggle()">
-                <span id="tempSlider" class="slider round"></span>
-            </label>
+                <label class="switch">
+                    <input id="tempCheckbox" type="checkbox" onchange="tempToggle()">
+                    <span id="tempSlider" class="slider round"></span>
+                </label>
             </div>
             <label class="labels">&#8457</label>
         </div>
 
         <form>
             <div id="ogMenus">
-            <select id="month_menu">
-                <option disabled selected>Choose month</option>
-                <option value="Jan">January</option>
-                <option value="Feb">February</option>
-                <option value="Mar">March</option>
-                <option value="Apr">April</option>
-                <option value="May">May</option>
-                <option value="Jun">June</option>
-                <option value="Jul">July</option>
-                <option value="Aug">August</option>
-                <option value="Sep">September</option>
-                <option value="Oct">October</option>
-                <option value="Nov">November</option>
-                <option value="Dec">December</option>
-            </select>
-            <select id="avgCelsiusTemp_menu">
-                <option disabled selected>Average temp</option>
-                <!-- <option value="-15">-15 - -11</option> -->
-                <option value="-10">-10 to -6</option>
-                <option value="-5">-5 to -1</option>
-                <option value="0">0 to 4</option>
-                <option value="5">5 to 9</option>
-                <option value="10">10 to 14</option>
-                <option value="15">15 to 19</option>
-                <option value="20">20 to 24</option>
-                <option value="25">25 to 29</option>
-                <option value="30">30 to 34</option>
-                <!-- <option value="35">35 - 39</option> -->
-            </select>
+                <select id="month_menu">
+                    <option disabled selected>Choose month</option>
+                    <option value="Jan">January</option>
+                    <option value="Feb">February</option>
+                    <option value="Mar">March</option>
+                    <option value="Apr">April</option>
+                    <option value="May">May</option>
+                    <option value="Jun">June</option>
+                    <option value="Jul">July</option>
+                    <option value="Aug">August</option>
+                    <option value="Sep">September</option>
+                    <option value="Oct">October</option>
+                    <option value="Nov">November</option>
+                    <option value="Dec">December</option>
+                </select>
+                <select id="avgCelsiusTemp_menu">
+                    <option disabled selected>Average temp</option>
+                    <option value="-10">-10 to -6</option>
+                    <option value="-5">-5 to -1</option>
+                    <option value="0">0 to 4</option>
+                    <option value="5">5 to 9</option>
+                    <option value="10">10 to 14</option>
+                    <option value="15">15 to 19</option>
+                    <option value="20">20 to 24</option>
+                    <option value="25">25 to 29</option>
+                    <option value="30">30 to 34</option>
+                </select>
 
-            <select id="avgFahrenTemp_menu">
-                <option disabled selected>Average temp</option>
-                <!-- <option value="5">5 - 13</option> -->
-                <option value="14">14 - 22</option>
-                <option value="23">23 - 31</option>
-                <option value="32">32 - 40</option>
-                <option value="41">41 - 49</option>
-                <option value="50">50 - 58</option>
-                <option value="59">59 - 67</option>
-                <option value="68">68 - 76</option>
-                <option value="77">77 - 85</option>
-                <option value="86">86- 94</option>
-                <!-- <option value="95">95 - 103</option> -->
-            </select>
+                <select id="avgFahrenTemp_menu">
+                    <option disabled selected>Average temp</option>
+                    <option value="14">14 - 22</option>
+                    <option value="23">23 - 31</option>
+                    <option value="32">32 - 40</option>
+                    <option value="41">41 - 49</option>
+                    <option value="50">50 - 58</option>
+                    <option value="59">59 - 67</option>
+                    <option value="68">68 - 76</option>
+                    <option value="77">77 - 85</option>
+                    <option value="86">86- 94</option>
+                </select>
 
-            <!-- <input id="submit_button" name="submit" type="submit" onclick="combinedWeatherTable(); return false;"> -->
-            <!-- <label for="submit_button" id="submit_label">Click for your departures</label> -->
-            <!-- <input id="submit_button" name="submit" type="image" src="/images/plane-icon.png" onclick="combinedWeatherTable(); return false;"> -->
-            <button id="submit_button" name="submit" type="button" onclick="combinedWeatherTable(); return false;">Click for destinations</button>
+                <button id="submit_button" name="submit" type="button"
+                    onclick="combinedWeatherTable(); return false;">Click for destinations</button>
             </div>
-            <!-- <div id="resetButton"> -->
+
             <input id="resetButton" value="New Search" type="submit" onclick="resetTable();">
-            <!-- <button id="resetButton" name="submit" type="button" onclick="resetTable();"></button> -->
-            <!-- </div> -->
+
         </form>
     </div>
 
     <div id="intro-text">
         <h2>About this tool</h2>
-        <p>One of the most exciting parts of travel planning is working out a shortlist of potential locations. If you're anything like me, this involves some research to narrow down possibilities. One of the key factors for my travel planning is weather averages. I want to make sure the locations I have in mind meet the weather criteria I am looking for. The way I have done this previously, is to manually search each individual location and sort through the data.</p><br>
+        <p>One of the most exciting parts of travel planning is working out a shortlist of potential locations. If
+            you're anything like me, this involves some research to narrow down possibilities. One of the key factors
+            for my travel planning is weather averages. I want to make sure the locations I have in mind meet the
+            weather criteria I am looking for. The way I have done this previously, is to manually search each
+            individual location and sort through the data.</p><br>
 
-        <p>I found this approach to be time consuming and often limiting in the results. For instance, when you search for weather averages of potential travel locations, you are working from a list of holiday destinantions you've already decided on. This is not bad if you know where you'd like to go. 
-        For me, a more interesting questions is, 
-            
-        where should I travel in June with an average temperature of 20 degrees celsius?</p><br>
-            
-        <p>As a result this tool came to fruition and allows you to start your holiday planning journey with a quick shortlist of travel possibilities. It can dramatically reduce the time to curate a list destinantions based on weather criteria. Also, provide exciting new travel ideas by showing locations you may have previously overlooked.</p><br>
-            
-        Happy travel planning : ) <br><br> 
+        <p>I found this approach to be time consuming and often limiting in the results. For instance, when you search
+            for weather averages of potential travel locations, you are working from a list of holiday destinantions
+            you've already decided on. This is not bad if you know where you'd like to go.
+            For me, a more interesting questions is,
 
-        <h2>Disclaimer</h2>  
+            where should I travel in June with an average temperature of 20 degrees celsius?</p><br>
 
-        <p>This tool is designed to create a quick shortlist of possible holiday destinations from which you can research further to determine suitability.</p><br>  
+        <p>As a result this tool came to fruition and allows you to start your holiday planning journey with a quick
+            shortlist of travel possibilities. It can dramatically reduce the time to curate a list destinantions based
+            on weather criteria. Also, provide exciting new travel ideas by showing locations you may have previously
+            overlooked.</p><br>
 
-        <p>Please remember to consider your safety when travelling. Great care has been taken to remove high risk destinations (areas in conflict) from the data, but situations can change. Also, this list does not factor in extreme weather (typhoons, monsoons etc.) which some destinations may experience at certain times of the year. It is recommended that you check travel warnings from your government and the local government once you have shortlisted locations to visit.</p>
+        Happy travel planning : ) <br><br>
+
+        <h2>Disclaimer</h2>
+
+        <p>This tool is designed to create a quick shortlist of possible holiday destinations from which you can
+            research further to determine suitability.</p><br>
+
+        <p>Please remember to consider your safety when travelling. Great care has been taken to remove high risk
+            destinations (areas in conflict) from the data, but situations can change. Also, this list does not factor
+            in extreme weather (typhoons, monsoons etc.) which some destinations may experience at certain times of the
+            year. It is recommended that you check travel warnings from your government and the local government once
+            you have shortlisted locations to visit.</p>
 
     </div>
 
@@ -162,8 +158,6 @@
             <td id="rainAvg"></td>
         </tr>
     </table>
-
-    <!-- <img src="//lh5.ggpht.com/XJZJYLBAMMyyV3e0oY1jTiBxmA17G4BI_2KLG3MlEsVFUjHBBB1VHy1SgCd9gWwbZnlitH3T=w234" height="auto" id="googleAdBottom"> -->
 
     <footer>
         <p>C0d3D_D3s1gN &#169; 2019</p>
