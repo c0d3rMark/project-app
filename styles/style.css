@@ -12,11 +12,11 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-          align-items: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(55vh, rgba(253, 253, 253,0)),color-stop(95vh, rgba(253, 253, 253,1))), url(../images/atmosphere.jpg);
-  background-image: linear-gradient(to bottom, rgba(36,116,81,0) 85vh,rgb(13, 21, 34) 97vh), url(../images/clouds.jpg); 
+  align-items: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(55vh, rgba(253, 253, 253, 0)), color-stop(95vh, rgba(253, 253, 253, 1))), url(../images/atmosphere.jpg);
+  background-image: linear-gradient(to bottom, rgba(36, 116, 81, 0) 85vh, rgb(13, 21, 34) 97vh), url(../images/clouds.jpg);
   background-repeat: no-repeat;
   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
   color: white;
@@ -83,7 +83,7 @@ header {
   display: -webkit-inline-box;
   display: inline-flex;
   -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-bottom: 20px;
   margin-top: 10px;
   background-color: rgba(253, 253, 253, 1);
@@ -95,7 +95,7 @@ header {
 .tempToggle h2 {
   display: inline-block;
 }
- 
+
 .switch {
   position: relative;
   display: -webkit-box;
@@ -168,7 +168,7 @@ input:checked+.slider:before {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
   padding-top: 25px;
   font-size: 20px;
 }
@@ -176,7 +176,7 @@ input:checked+.slider:before {
 #submit_button {
   display: -webkit-box;
   display: flex;
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: 50px;
   width: 100%;
   height: 50px;
@@ -204,7 +204,7 @@ input:checked+.slider:before {
   width: 90%;
   text-align: center;
   margin-top: 40px;
-  background-color:rgba(253, 253, 253, 1);
+  background-color: rgba(253, 253, 253, 1);
   color: black;
   padding: 30px;
   border-radius: 10px;
@@ -217,7 +217,7 @@ input:checked+.slider:before {
   width: 90%;
   text-align: center;
   margin-top: 40px;
-  background-color:rgba(253, 253, 253, 1);
+  background-color: rgba(253, 253, 253, 1);
   color: black;
   padding: 30px;
   border-radius: 10px;
@@ -352,9 +352,11 @@ footer p {
   .tempHeader h1 {
     font-size: 50px;
   }
+
   .tempHeader {
     width: 90%;
   }
+
   #mobile-caption {
     font-weight: initial;
   }
